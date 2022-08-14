@@ -1,0 +1,76 @@
+<%- include('partials/header') %>
+
+<head>
+  <link rel="stylesheet" href="/blog.css">
+</head>
+
+<div>
+  
+
+
+    <div class="container p-5">
+      <div class="row">
+
+        <% for(var i= (notice.length-1); i>=0; i--){ %>
+        <% if (notice[i].type=="Notice") {%>
+        <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+
+
+
+          <div class="card m-3">
+            <img class="card-img" src="<%=notice[i].imageurl %>"
+              alt="Bologna">
+              <!-- <p> <%=notice[i].imageurl%></p> -->
+            <!-- <div class="card-img-overlay">
+              <a href="#" class="btn btn-light btn-sm"><%= notice[i].type %></a>
+            </div> -->
+
+
+            <div class="card-body">
+              <h4 class="card-title"><%= notice[i].title %></h4>
+              <!-- <small class="text-muted cat">
+                <i class="far fa-clock text-info"></i> 30 minutes
+              </small> -->
+              <% if(notice[i].content.length>25){%>
+                <%    str1=notice[i].content;%>
+                <%     str1=str1.substring(0,100);%>
+                  <p class="card-text"><%= str1 %> . . . </p>
+                <% } else{%>
+                  <%     str1=notice[i].content; %>
+                  <p class="card-text"><%= str1 %></p>
+                <% }%>
+                <a href="/content/?id=<%= i %>" class="btn btn-info">Read More</a>
+              <!-- <p class="card-text"><%= notice[i].content %></p>
+              <a href="#" class="btn btn-info">Read More</a> -->
+            </div>
+            <!-- <div class="card-footer text-muted d-flex justify-content-between bg-transparent border-top-0">
+              <div class="views">Apr 1, 12:45PM
+              </div> -->
+              <!-- <div class="stats">
+                <i class="fa-solid fa-heart"></i> 74
+                <i class="fa-solid fa-heart-crack"></i> 5
+              </div> -->
+
+            <!-- </div> -->
+          </div>
+        </div>
+        <% } %>
+        <% } %>
+      </div>
+
+    </div>
+  </div>
+
+  <%- include('partials/footer') %>
+  </body>
+
+  </html>
+
+
+
+
+
+
+
+
+  

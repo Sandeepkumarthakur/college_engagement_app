@@ -1,0 +1,71 @@
+    <%- include('partials/header') %>
+
+    <head>
+      <link rel="stylesheet" href="/blog.css">
+    </head>
+
+    <div>
+      
+
+
+        <div class="container p-5">
+          <div class="row">
+            
+
+            <%
+             for(var i= (blogs.length-1); i>=0; i--){ %>
+            <% if (blogs[i].type=="Blog") {%>
+            <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+
+
+
+              <div class="card m-3">
+                <img class="card-img" src="<%=blogs[i].imageurl %>"
+                alt="Bologna">
+                <!-- <div class="card">
+                  <a href="#" class="btn btn-light btn-sm"><%= blogs[i].type %></a>
+                </div> -->
+
+
+                <div class="card-body">
+                  <h4 class="card-title"><%= blogs[i].title %></h4>
+                  <!-- <small class="text-muted cat">
+                    <i class="far fa-clock text-info"></i> 30 minutes
+                  </small> -->
+
+                  <% if(blogs[i].content.length>25){%>
+                    <%    str1=blogs[i].content;%>
+                    <%     str1=str1.substring(0,100);%>
+                      <p class="card-text"><%= str1 %> . . . </p>
+                    <% } else{%>
+                      <%     str1=blogs[i].content; %>
+                      <p class="card-text"><%= str1 %></p>
+                    <% }%>
+                      <a href="/content/?id=<%= i %>" class="btn btn-info">Read More</a>
+                </div>
+                <div class="card-footer text-muted d-flex justify-content-between bg-transparent border-top-0">
+                  <!-- <div class="views">Apr 1, 12:45PM
+                  </div> -->
+                  <div class="stats">
+                   
+                    <i class="fa"></i>  ❤️ <%= Math.floor(Math.random() * ( 250- 50) + 50) %>
+                    <i class="fa"></i> 💔 <%= Math.floor(Math.random() * ( 20- 6) + 6) %>
+                  </div>
+                  <!-- <div class="row h-100">
+                    <div class="col" style="text-align: center; border-right: 1px solid grey;">UPVOTE</div>
+                    <div class="col" style="text-align: center;">DOWNVOTE</div>
+                </div> -->
+                </div>
+              </div>
+            </div>
+            <% } %>
+            <% } %>
+          </div>
+
+        </div>
+      </div>
+
+      <%- include('partials/footer') %>
+      </body>
+
+      </html>

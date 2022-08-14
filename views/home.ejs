@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="/home.css">
+    <!-- <link rel="shortcut icon" type="image/png" href="/img/favicon.png" /> -->
+    <script src="https://kit.fontawesome.com/248ed7fb47.js" crossorigin="anonymous"></script>
+    <title>College Engagement</title>
+    
+</head>
+
+<body>
+   <%- include('partials/header') %>
+    <div class="homepage">
+        <h1 id="homepage-text" >Welcome to College App</h1>
+    </div>
+    <div class="row d-flex justify-content-center" id="main_box">
+        <div class="card col-4" id="main_box_interview" style="width: 18rem;">
+
+            <div class="card-body">
+                <img src="/img/google-logo.jpeg" class="card-img-top" alt="...">
+                <h5 class="card-title">My first Interview at Google</h5>
+                <p class="card-text">Google is a dream company for many software engineers. I had the chance to Interview at Google, a month ago. Although I could not make it through, in all, it was an amazing experience interviewing at Google, as it was also my first ever interview experience.
+                  .....
+                    </p>
+                <a href="#" class="btn btn-primary">Read More....</a>
+            </div>
+        </div>
+
+        <div class="col-8">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card ">
+                        <div class="card-body">
+                            <h5 class="card-title">6 Cloud Computing Trends to Watch in 2022</h5>
+                            <p class="card-text">The future of cloud computing is changing rapidly. It is a domain that has been at the forefront of technological advancements and will continue to be for the foreseeable future..
+                            </p>
+                            <a href="#" class="btn btn-primary">Read More...</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Programming Logic: How To Get Better At It?</h5>
+                            <p class="card-text">“The term programming logic has its roots in the advancement of computer science. Programming logic started only with ‘hard and fast logic' compiled into sophisticated algorithms...
+                            </p>
+                            <a href="#" class="btn btn-primary">Read More...</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Notice</h5>
+                    <p class="card-text">SDE-III (Immediately available or short notice period)
+                      <br>  An excellent opportunity to work with an emeging giant in the Edtech space                   
+                      <br>Job Description
+                      Design and develop highly scalable, reliable and fault-tolerant systems for one of the world's fastest-growing startups </p>
+                    <a href="#" class="btn btn-primary">Read More...</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <%- include('partials/footer') %>
+
+   
+</body>
+
+</html>
