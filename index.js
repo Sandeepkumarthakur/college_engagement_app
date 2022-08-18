@@ -24,7 +24,7 @@ const store = new MongoDBStore({uri: MONGODB_URI, collection: 'sessions'})
 
 let csrfProtection = csrf();
 app.use(bodyParser.urlencoded({extended: false}));
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "/public")));
 app.set("view engine", "ejs");
 app.use(session({secret: "my secret", resave: false, saveUninitialized: false, store: store}));
 
