@@ -7,6 +7,7 @@ const session = require("express-session")
 const MongoDBStore = require("connect-mongodb-session")(session);
 const { flash } = require('express-flash-message');
 var csrf = require('csurf')
+require('dotenv').config()
 
 const authRoutes = require("./routes/auth");
 const postRoutes = require("./routes/post");
@@ -15,8 +16,9 @@ const searchRoutes = require("./routes/search");
 const profileRoutes = require("./routes/profile");
 
 const req = require("express/lib/request");
-const MONGODB_URI = "mongodb://localhost:27017/collegeApp"
-const port = process.env.PORT||3001;
+// const MONGODB_URI = "mongodb://localhost:27017/collegeApp"
+const MONGODB_URI = process.env.MONGO_URI;
+const port = process.env.PORT||3000;
 
 const store = new MongoDBStore({uri: MONGODB_URI, collection: 'sessions'})
 
