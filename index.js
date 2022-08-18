@@ -18,7 +18,7 @@ const profileRoutes = require("./routes/profile");
 const req = require("express/lib/request");
 // const MONGODB_URI = "mongodb://localhost:27017/collegeApp"
 const MONGODB_URI = process.env.MONGO_URI;
-const port = process.env.PORT||3000;
+const PORT = process.env.PORT;
 
 const store = new MongoDBStore({uri: MONGODB_URI, collection: 'sessions'})
 
@@ -45,19 +45,19 @@ app.use((req,res,next)=>{
     res.locals.csrfToken=req.csrfToken();
     next();
 })
-
+app.get("/", (req, res) => { // const isLoggedIn = req.get('Cookie').split(";")[1].trim().split("=")[1] == 'True';
+    res.render("home.ejs");
+});
 app.use(authRoutes);
 app.use(createRoutes);
 app.use(postRoutes);
 app.use(searchRoutes);
 app.use(profileRoutes);
-app.get("/", (req, res) => { // const isLoggedIn = req.get('Cookie').split(";")[1].trim().split("=")[1] == 'True';
-    res.render("home.ejs");
-});
 
 
-app.listen(3000, () => {
-    console.log(`Listening to the port no at ${port}`);
+
+app.listen(PORT, () => {
+    console.log(`Listening to the port no at ${PORT}`);
 });
 
 mongoose.connect(MONGODB_URI, () => {
